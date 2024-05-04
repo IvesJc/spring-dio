@@ -12,17 +12,4 @@ public class PrimeirosPassosApplication {
         SpringApplication.run(PrimeirosPassosApplication.class, args);
     }
 
-    // @Bean : quando não temos acesso ao código-fonte. Ex: Gson
-    // @Component : quando a classe foi provida por mim. Ex: ViaCepResponse
-
-
-    @Bean
-    public CommandLineRunner run(SistemaMensagem sistema) throws Exception {
-        return args -> {
-            sistema.enviarConfirmacaoCadastro();
-            sistema.enviarMensagemBoasVindas();
-            sistema.enviarConfirmacaoCadastro();
-        };
-    }
-
 }
