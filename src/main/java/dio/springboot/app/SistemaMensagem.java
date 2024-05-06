@@ -1,5 +1,6 @@
 package dio.springboot.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,25 +13,15 @@ import java.util.Locale;
 @Component
 public class SistemaMensagem implements CommandLineRunner {
 
-    // @Value : para capturar o valor de alguma propriedade definida em
-    // application.properties
-    // :_____ : default
-
-    @Value("${name:NoReply-DIO}")
-    private String nome;
-
-    @Value("${email}")
-    private String email;
-
-    @Value("${telefones}")
-    private List<Long> telefones = new ArrayList<>();
+    @Autowired
+    private Remetente remetente;
 
     @Override
     public void run(String... args) throws Exception {
         System.out.println(
-                "Mensagem enviada por: "+nome+
-                        "\nEmail: "+email+
-                        "\nCom telefones para contato: "+telefones);
+                "Mensagem enviada por: "+remetente.getNome()+
+                        "\nEmail: "+remetente.getEmail()+
+                        "\nCom telefones para contato: "+remetente.getTelefones());
         System.out.println("Seu cadastro foi aprovado");
     }
 }
