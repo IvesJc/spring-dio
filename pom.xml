@@ -31,17 +31,11 @@
 			<version>3.2.5</version>
 		</dependency>
 
-
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<!-- POSTGRES -->
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>2.2.224</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 	</dependencies>

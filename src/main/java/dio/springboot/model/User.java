@@ -3,6 +3,7 @@ package dio.springboot.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "tb_user")
 public class User {
 
     @Id
